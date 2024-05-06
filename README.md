@@ -1,4 +1,4 @@
-# Dungeons-Debugging
+# Dungeons n Debugging: Home of Upside down Hackathon team
 Dungeons &amp; Debugging: Masters of the Technologies from Upside Down
 Certainly! Let us embark on a whimsical journey into the digital abyss, where lines of code intersect with the eerie echoes of the Upside Down. Behold, the tale of **Dungeons & Debugging: The Master of Technologies from the Upside Down**! 🚀🔮👾
 
