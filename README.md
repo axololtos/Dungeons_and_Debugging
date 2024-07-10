@@ -31,3 +31,104 @@ Scribe Syntaxia, the Documentation Mage, transcribes incantations into README sc
 And so, dear hackathon judges, behold **Dungeons & Debugging**: where wizards wield IDEs, dragons guard pull requests, and the binary moon shines bright. May their pull requests be swift, their tests pass, and their coffee always hot! 🌟☕✨
 
 Remember, in the Upside Down of code, bugs are the true Demogorgons. Happy hacking, brave adventurers! 🚀🔍🌌
+
+
+
+
+import java.util.Scanner;
+
+public class MatrixOperations {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Initialize 2x2 Matrices
+        int[][] matrixA = new int[2][2];
+        int[][] matrixB = new int[2][2];
+
+        System.out.println("Enter elements of 2x2 matrix A:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                matrixA[i][j] = scanner.nextInt();
+            }
+        }
+
+        System.out.println("Enter elements of 2x2 matrix B:");
+        for (int i = 0; i < 2; i++) {
+            for (int j = 0; j < 2; j++) {
+                matrixB[i][j] = scanner.nextInt();
+            }
+        }
+
+        scanner.close();
+
+        // Perform Operations and Display Results
+        int[][] resultAddition = addMatrices(matrixA, matrixB);
+        int[][] resultSubtraction = subtractMatrices(matrixA, matrixB);
+        int[][] resultMultiplication = multiplyMatrices(matrixA, matrixB);
+
+        System.out.println("Matrix A + Matrix B:");
+        printMatrix(resultAddition);
+
+        System.out.println("Matrix A - Matrix B:");
+        printMatrix(resultSubtraction);
+
+        System.out.println("Matrix A * Matrix B:");
+        printMatrix(resultMultiplication);
+    }
+
+    // Method for Matrix Addition
+    public static int[][] addMatrices(int[][] a, int[][] b) {
+        int rows = a.length;
+        int cols = a[0].length;
+        int[][] result = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = a[i][j] + b[i][j];
+            }
+        }
+        return result;
+    }
+
+    // Method for Matrix Subtraction
+    public static int[][] subtractMatrices(int[][] a, int[][] b) {
+        int rows = a.length;
+        int cols = a[0].length;
+        int[][] result = new int[rows][cols];
+
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                result[i][j] = a[i][j] - b[i][j];
+            }
+        }
+        return result;
+    }
+
+    // Method for Matrix Multiplication
+    public static int[][] multiplyMatrices(int[][] a, int[][] b) {
+        int rowsA = a.length;
+        int colsA = a[0].length;
+        int colsB = b[0].length;
+        int[][] result = new int[rowsA][colsB];
+
+        for (int i = 0; i < rowsA; i++) {
+            for (int j = 0; j < colsB; j++) {
+                result[i][j] = 0;
+                for (int k = 0; k < colsA; k++) {
+                    result[i][j] += a[i][k] * b[k][j];
+                }
+            }
+        }
+        return result;
+    }
+
+    // Method to Print Matrix
+    public static void printMatrix(int[][] matrix) {
+        for (int[] row : matrix) {
+            for (int element : row) {
+                System.out.print(element + " ");
+            }
+            System.out.println();
+        }
+    }
+}
